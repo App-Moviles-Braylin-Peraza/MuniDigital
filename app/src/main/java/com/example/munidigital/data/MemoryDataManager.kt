@@ -7,7 +7,7 @@ import java.util.concurrent.atomic.AtomicInteger
  * Clase MemoryDataManager (cumple con el requisito de nombre exacto)
  * Implementa la interfaz TramiteDataManager.
  */
-class MemoryDataManager : TramiteDataManager { // <-- Implementa la interfaz
+class MemoryDataManager : TramiteDataManager {
 
     private val tramites: MutableList<Tramite> = mutableListOf()
     private val idGenerator = AtomicInteger(0)
@@ -15,9 +15,9 @@ class MemoryDataManager : TramiteDataManager { // <-- Implementa la interfaz
     // Métodos CRUD de Tramite aquí (saveTramite, getTramiteById, etc.)
     override fun saveTramite(tramite: Tramite) {
         val newId = idGenerator.incrementAndGet()
-        val tramiteToSave = tramite.copy(id = newId) // Creamos el objeto con el ID real
+        val tramiteToSave = tramite.copy(id = newId)
         tramites.add(tramiteToSave)
-        // Opcional: retornar el objeto con el ID asignado si la interfaz lo permite.
+
     }
 
 

@@ -1,6 +1,6 @@
 package com.example.munidigital.data
 
-import com.example.munidigital.model.Tramite // Importamos la Entidad
+import com.example.munidigital.model.Tramite
 
 /**
  * Interfaz que define las acciones de gestión de datos para la entidad Tramite.
@@ -8,11 +8,11 @@ import com.example.munidigital.model.Tramite // Importamos la Entidad
  */
 interface TramiteDataManager {
 
-    fun saveTramite(tramite: Tramite) // CREATE (Crear)
-    fun getTramiteById(id: Int): Tramite? // READ (Leer uno)
-    fun updateTramite(tramite: Tramite) // UPDATE (Actualizar)
-    fun deleteTramite(tramite: Tramite) // DELETE (Eliminar)
+    fun saveTramite(tramite: Tramite)
+    fun getTramiteById(id: Int): Tramite?
+    fun updateTramite(tramite: Tramite)
+    fun deleteTramite(tramite: Tramite)
 
-    fun getAllTramites(): List<Tramite> // READ (Leer todos)
-    fun getTramitesByEstado(estado: String): List<Tramite> // READ (Filtrar)
+    fun getAllTramites(): List<Tramite>
+    fun getTramitesByEstado(estado: String): List<Tramite>
 }

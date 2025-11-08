@@ -5,8 +5,7 @@ package com.example.munidigital.model
  */
 data class TipoTramite(
     val id: Int,
-    val nombre: String, // Ej: "Patente Comercial"
+    val nombre: String,
     val descripcionCorta: String,
-    // Lista de requisitos o documentos necesarios.
-    val requisitos: String // Podría ser una lista de strings en un sistema más complejo.
+    val requisitos: String
 )

@@ -1,7 +1,6 @@
 package com.example.munidigital.controller
 
 import com.example.munidigital.data.TramiteDataManager
-// import com.example.munidigital.data.MemoryDataManager <-- Ya no se importa aquí
 import com.example.munidigital.model.Tramite
 import com.example.munidigital.util.TramiteEstado
 
@@ -9,7 +8,7 @@ import com.example.munidigital.util.TramiteEstado
  * Clase Controlador (Controller) que maneja la lógica de negocio para los trámites.
  */
 class TramiteController(
-    // Inyectamos solo la Interfaz. La implementación se pasa desde fuera.
+
     private val dataManager: TramiteDataManager
 ) {
     // --- LÓGICA DE GESTIÓN (CRUD) ---

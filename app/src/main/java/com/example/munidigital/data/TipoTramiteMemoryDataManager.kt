@@ -11,7 +11,7 @@ interface TipoTramiteDataManager {
 // Implementación
 class TipoTramiteMemoryDataManager : TipoTramiteDataManager {
 
-    // Lista de datos fijos que simulan el catálogo municipal.
+
     private val catalogo: List<TipoTramite> = listOf(
         TipoTramite(
             id = 1,

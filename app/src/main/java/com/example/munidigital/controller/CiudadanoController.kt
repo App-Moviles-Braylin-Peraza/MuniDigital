@@ -40,8 +40,8 @@ class CiudadanoController(
 
     /**
      * [ADICIÓN] Actualiza el correo electrónico de un ciudadano existente.
-     * Requiere el método updateCiudadano() en la capa de datos.
-     */
+     * Requiere el metodo updateCiudadano() en la capa de datos.
+     * **/
     fun actualizarEmail(id: Int, nuevoEmail: String) {
         val ciudadano = dataManager.getCiudadanoById(id)
         if (ciudadano != null) {
