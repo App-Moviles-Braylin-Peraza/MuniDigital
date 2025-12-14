@@ -2,81 +2,63 @@ package com.example.munidigital.controller
 
 import com.example.munidigital.data.TramiteDataManager
 import com.example.munidigital.model.Tramite
-import com.example.munidigital.util.TramiteEstado
 
-/**
- * Clase Controlador (Controller) que maneja la lógica de negocio para los trámites.
- */
-class TramiteController(
+class TramiteController(private val dataManager: TramiteDataManager) {
 
-    private val dataManager: TramiteDataManager
-) {
-    // --- LÓGICA DE GESTIÓN (CRUD) ---
-
-    /**
-     * Crea y guarda un nuevo trámite. Ahora requiere los IDs de las claves foráneas.
-     */
-    fun crearNuevoTramite(
-        ciudadanoId: Int, // ID del usuario que lo crea
-        tipoTramiteId: Int, // ID del tipo de trámite seleccionado del catálogo
-        descripcion: String,
-        rutaAdjunto: String?
+    suspend fun crearNuevoTramite(
+        title: String,
+        description: String?,
+        userId: Int
     ): Tramite {
-        // 1. Validación de campos obligatorios.
-        if (descripcion.isBlank()) {
-            throw IllegalArgumentException("La descripción es obligatoria.")
+        if (title.isBlank()) {
+            throw IllegalArgumentException("El título es obligatorio.")
         }
-        // Nota: Las validaciones para que ciudadanoId/tipoTramiteId existan irían aquí.
 
-        // 2. Creamos la entidad Tramite con el modelo corregido.
         val nuevoTramite = Tramite(
-            id = 0, // ID asignado por el DataManager
-            ciudadanoId = ciudadanoId,
-            tipoTramiteId = tipoTramiteId,
-            descripcion = descripcion,
-            estado = TramiteEstado.PENDIENTE.valor, // Estado inicial fijo
-            rutaAdjunto = rutaAdjunto,
-            fechaCreacion = System.currentTimeMillis()
+            title = title,
+            description = description,
+            userId = userId
         )
 
-        // 3. Enviamos al DataManager para guardar
         dataManager.saveTramite(nuevoTramite)
         return nuevoTramite
     }
 
-    /**
-     * Actualiza el estado de un trámite.
-     */
-    fun actualizarEstadoTramite(id: Int, nuevoEstado: String) {
+    suspend fun actualizarTramite(
+        id: Int,
+        title: String?,
+        description: String?,
+        status: String?
+    ) {
         val tramite = dataManager.getTramiteById(id)
         if (tramite != null) {
-            // Lógica de negocio (opcional)
-            // if (tramite.estado != "TramiteEstado.PENDIENTE.valor" && nuevoEstado == "Pendiente") { ... }
-
-            val tramiteActualizado = tramite.copy(estado = nuevoEstado)
+            val tramiteActualizado = tramite.copy(
+                title = title ?: tramite.title,
+                description = description ?: tramite.description,
+                status = status ?: tramite.status
+            )
             dataManager.updateTramite(tramiteActualizado)
         }
     }
 
-    /**
-     * Elimina un trámite de forma permanente.
-     */
-    fun eliminarTramite(id: Int) {
+    suspend fun eliminarTramite(id: Int) {
         val tramite = dataManager.getTramiteById(id)
         if (tramite != null) {
             dataManager.deleteTramite(tramite)
+        } else {
+            throw IllegalArgumentException("Trámite no encontrado con ID: $id")
         }
     }
 
+    suspend fun obtenerTodosLosTramites(): List<Tramite> {
+        return dataManager.getAllTramites()
+    }
 
-    // --- LÓGICA DE CONSULTA ---
+    suspend fun obtenerTramitesFiltrados(status: String): List<Tramite> {
+        return dataManager.getTramitesByEstado(status)
+    }
 
-    /** Obtiene todos los trámites, ordenados por fecha de creación (los más recientes primero). */
-    fun obtenerTodosLosTramites() = dataManager.getAllTramites().sortedByDescending { it.fechaCreacion }
-
-    /** Obtiene trámites filtrados por el estado requerido. */
-    fun obtenerTramitesFiltrados(estado: String) = dataManager.getTramitesByEstado(estado)
-
-    /** Obtiene un trámite por su ID. */
-    fun obtenerTramitePorId(id: Int) = dataManager.getTramiteById(id)
+    suspend fun obtenerTramitePorId(id: Int): Tramite? {
+        return dataManager.getTramiteById(id)
+    }
 }

@@ -8,11 +8,11 @@ import com.example.munidigital.model.Tramite
  */
 interface TramiteDataManager {
 
-    fun saveTramite(tramite: Tramite)
-    fun getTramiteById(id: Int): Tramite?
-    fun updateTramite(tramite: Tramite)
-    fun deleteTramite(tramite: Tramite)
+    suspend fun saveTramite(tramite: Tramite)
+    suspend fun getTramiteById(id: Int): Tramite?
+    suspend fun updateTramite(tramite: Tramite)
+    suspend fun deleteTramite(tramite: Tramite)
 
-    fun getAllTramites(): List<Tramite>
-    fun getTramitesByEstado(estado: String): List<Tramite>
+    suspend fun getAllTramites(): List<Tramite>
+    suspend fun getTramitesByEstado(estado: String): List<Tramite>
 }

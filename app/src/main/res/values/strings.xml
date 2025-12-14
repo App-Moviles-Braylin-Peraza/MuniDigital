@@ -1,3 +1,76 @@
 <resources>
     <string name="app_name">Muni Digital</string>
+
+    <string name="imagen_completa">Imagen en pantalla completa</string>
+    
+    <!-- LoginActivity strings -->
+    <string name="login_exitoso">Login Exitoso</string>
+    <string name="error_login">Error: %1$s</string>
+    <string name="error_ingrese_usuario">Por favor, ingresa tu usuario</string>
+    <string name="error_usuario_minimo">El usuario debe tener al menos 4 caracteres</string>
+    <string name="error_ingrese_contrasena">Por favor, ingresa tu contraseña</string>
+    <string name="error_contrasena_minimo">La contraseña debe tener al menos 6 caracteres</string>
+    
+    <!-- MainActivity strings -->
+    <string name="cerrar_sesion">Cerrar Sesión</string>
+    <string name="confirmar_cerrar_sesion">¿Estás seguro que deseas cerrar sesión?</string>
+    <string name="si">Sí</string>
+    <string name="no">No</string>
+    <string name="sesion_cerrada">Sesión cerrada</string>
+    
+    <!-- TramiteListActivity strings -->
+    <string name="no_hay_tramites">No hay trámites disponibles</string>
+    <string name="error_cargar_tramites">Error al cargar trámites: %1$s</string>
+    
+    <!-- CrearTramiteActivity strings -->
+    <string name="archivo_adjuntado">Archivo adjuntado exitosamente</string>
+    <string name="documento_adjuntado">Documento adjuntado: %1$s</string>
+    <string name="archivo">archivo</string>
+    <string name="foto_capturada">Foto capturada exitosamente</string>
+    <string name="permiso_camara_requerido">Se requiere permiso de cámara para tomar fotos</string>
+    <string name="permiso_almacenamiento_requerido">Se requiere permiso de almacenamiento para acceder a la galería</string>
+    <string name="permiso_ubicacion_denegado">Location permission denied</string>
+    <string name="tramite_creado_exitoso">¡Trámite creado exitosamente!</string>
+    <string name="error_crear_tramite">Error: %1$s</string>
+    <string name="error_cargar_tipos_procedimiento">Error al cargar tipos de procedimiento. Intenta reiniciar la aplicación.</string>
+    <string name="error_seleccione_tipo_tramite">Por favor, selecciona un tipo de trámite</string>
+    <string name="error_ingrese_descripcion">Por favor, ingresa una descripción</string>
+    <string name="no_hay_tipos_tramite">No hay tipos de trámite disponibles</string>
+    <string name="error_inesperado">Error inesperado: %1$s</string>
+    <string name="agregar_direccion">Add Address</string>
+    <string name="agregar">Add</string>
+    <string name="cancelar">Cancel</string>
+    <string name="error_determinar_direccion">Could not determine address from location.</string>
+    <string name="geocoder_no_disponible">Geocoder service not available.</string>
+    <string name="error_obtener_ubicacion">Could not get current location.</string>
+    <string name="error_fallo_ubicacion">Failed to get location: %1$s</string>
+    
+    <!-- TramiteAdapter strings -->
+    <string name="sin_descripcion_tramite">Sin descripción</string>
+    <string name="pendiente">Pendiente</string>
+    
+    <!-- StatusUtils strings -->
+    <string name="status_iniciado">Iniciado</string>
+    <string name="status_en_proceso">En Proceso</string>
+    <string name="status_finalizado">Finalizado</string>
+    
+    <!-- DetalleTramiteActivity strings -->
+    <string name="error_tramite_id_no_encontrado">Error: ID de trámite no encontrado.</string>
+    <string name="compartir_tramite">Compartir trámite</string>
+    <string name="tramite_id_format">MD-%1$d</string>
+    <string name="tipo_de_tramite">Tipo de trámite</string>
+    <string name="sin_direccion">Sin dirección</string>
+    <string name="sin_descripcion">Sin descripción</string>
+    <string name="sin_direccion_especificada">Sin dirección especificada</string>
+    <string name="tramite_no_encontrado">Trámite no encontrado</string>
+    <string name="error_cargar_detalles">Error al cargar detalles: %1$s</string>
+    <string name="attachments_count">Archivos adjuntos (%1$d)</string>
+    <string name="abrir_con">Abrir con</string>
+    <string name="error_abrir_archivo">No se pudo abrir el archivo: %1$s</string>
+
+    <string name="No_se_pudo_obtener_ubicación">No se pudo obtener ubicación</string>
+
+    <!-- Foto/Adjuntos strings -->
+    <string name="foto_tramite">Foto del trámite</string>
+    <string name="eliminar_foto">Eliminar foto</string>
 </resources>

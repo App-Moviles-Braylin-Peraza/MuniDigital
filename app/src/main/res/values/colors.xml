@@ -1,5 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- Colores primarios -->
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorPrimaryLight">#C5CAE9</color>
+    <color name="colorAccent">#FF5722</color>
+    
+    <!-- Colores secundarios -->
+    <color name="colorSecondary">#03A9F4</color>
+    <color name="colorSecondaryDark">#0288D1</color>
+    
+    <!-- Colores de fondo -->
+    <color name="backgroundColor">#F5F5F5</color>
+    <color name="cardBackground">#FFFFFF</color>
+    
+    <!-- Colores de texto -->
+    <color name="textPrimary">#212121</color>
+    <color name="textSecondary">#757575</color>
+    <color name="textHint">#BDBDBD</color>
+    
+    <!-- Material Design colores legacy -->
     <color name="purple_200">#FFBB86FC</color>
     <color name="purple_500">#FF6200EE</color>
     <color name="purple_700">#FF3700B3</color>
